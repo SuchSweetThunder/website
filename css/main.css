@@ -314,8 +314,10 @@ h1, h2, h3 {
   line-height: 0.85;
 }
 
-.services-heading {
-  font-size: clamp(28px, 3.5vw, 50px);
+h3.services-heading {
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  
 }
 
 /* Footer copyright */
@@ -685,7 +687,7 @@ h1, h2, h3 {
 	
 main#about, main#what { width: 100%; }
 	
-	#about-us, #contact, #what-we-do {
+	#about-us, #contact, #what-we-do, #services {
 	  padding: 0;
 	  display: flex;
 	  flex-direction: column;
@@ -713,9 +715,9 @@ main#about, main#what { width: 100%; }
 	h2.headline-3 { font-size: clamp(40px, 10.8vw, 167px);}
 	h2.headline-accent { color: var(--color-primary); }
 
-	#what h2.headline-1 { font-size: clamp(45px, 8vw, 120px);}
-	#what h2.headline-2 { font-size: clamp(44px, 7.9vw, 118px);}
-	#what h2.headline-3 { font-size: clamp(41px, 7.35vw, 110px);}
+	#what h2.headline-1 { font-size: clamp(40px, 8vw, 120px);}
+	#what h2.headline-2 { font-size: clamp(39px, 7.9vw, 118px);}
+	#what h2.headline-3 { font-size: clamp(35px, 7.35vw, 110px);}
 	
 	.about-us-image {
 	  width: 100%;
@@ -738,7 +740,7 @@ main#about, main#what { width: 100%; }
 	}
 	
 	#what .content-container { padding-top: 0; }
-	#what .content-container p { max-width: 500px; }
+	#what .content-container p { max-width: 650px; }
 	
 	/* Modern full-width section base styles */
 	.full-width-section {
@@ -765,7 +767,7 @@ main#about, main#what { width: 100%; }
 	/* Contact heading */
 	.contact-heading h2 {
 	  font-family: "Sink", sans-serif;
-	  font-size: clamp(30px, 4vw, 45px);
+	  font-size: clamp(38px, 4.0vw, 45px);
 	  line-height: 0.9;
 	  text-transform: uppercase;
 	  margin: 0;
@@ -857,6 +859,78 @@ main#about, main#what { width: 100%; }
 	  }
 	}
 
+
+/* 
+==========================================================================
+   Horizontal Services Section Styles with Minimal Animation
+========================================================================== 
+*/
+
+
+.services-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-2);
+}
+
+.service-category {
+    flex: 1;
+    padding: var(--space-1);
+    border-top: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Subtle hover effect - only change the top border */
+.service-category:hover { border-top-color: var(--color-primary-2); }
+
+.services-heading {
+    font-family: "Sink", sans-serif;
+    font-size: clamp(28px, 3.5vw, 36px);
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: var(--space-2);
+    transition: color 0.3s ease;
+}
+
+.service-list {
+    margin: 0;
+    padding-left: var(--space-2);
+    list-style-type: disc;
+}
+
+.service-item {
+    font-size: clamp(14px, 1.8vw, 16px);
+    line-height: 1.4;
+    margin-bottom: var(--space-half);
+}
+
+/* Responsive behavior for horizontal services section */
+@media (max-width: 991px) {
+    .services-row {
+        gap: var(--space-2);
+    }
+    
+    .services-heading {
+        font-size: clamp(24px, 2.8vw, 30px);
+    }
+}
+
+@media (max-width: 767px) {
+    .services-row {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+    
+    .service-category {
+        padding: var(--space-1-5);
+    }
+    
+    .services-heading {
+        font-size: 30px;
+    }
+}
 
 /* Footer */
 .footer {

@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
     <title>What We Do - Jockamo Barnes | Cultural Instigators</title>
-    <meta name="description" content="Jockamo Barnes is an independent creative agency known for creating ideas that help brands instigate culture.">
+    <meta name="description" content="Jockamo Barnes is an independent creative agency creating innovative brand, advertising, and design solutions across the Middle East. Explore our services and capabilities.">
     <meta property="og:title" content="What We Do - Jockamo Barnes | Cultural Instigators">
-    <meta property="og:description" content="Jockamo Barnes is an independent creative agency known for creating ideas that help brands instigate culture.">
-    <meta property="og:image" content="#">
+    <meta property="og:description" content="Jockamo Barnes is an independent creative agency creating innovative brand, advertising, and design solutions across the Middle East.">
+    <meta property="og:image" content="public/image/og-image.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="public/favicon.png" type="icon/png" sizes="32x32">
+    <link rel="shortcut icon" href="public/favicon.png" type="image/png" sizes="32x32">
     
-    <!-- Preload critical assets -->
+    <!-- Preload critical assets for better performance -->
     <link rel="preload" href="public/fonts/sink.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="public/image/img-logo-default-200h.png" as="image">
     
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     
-    <!-- Add this style for font display -->
+    <!-- Font face definition -->
     <style>
         @font-face {
             font-family: "Sink";
@@ -31,11 +32,14 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/main.css">
-    
 </head>
 <body>
     <!-- Main Container -->
-    <div class="container">
+    <div class="container" style="
+				background-image: url('public/backgrounds/2120x3200-blackbg-1500w.jpg');
+				background-size: cover;
+				background-position: center;
+	">
         <!-- Navigation -->
 		<header class="navbar" id="main-navbar">
 			<div class="navbar-interactive">
@@ -123,52 +127,49 @@
             </section>
             
             <!-- Services Section -->
-            <section class="max-width" style="position: relative; padding-top: var(--space-4); padding-left: var(--space-4); padding-right: var(--space-4); padding-bottom: var(--space-4);">
-                <!-- Background Emblem -->
-                <img alt="Jockamo Barnes emblem" src="public/image/img-creme-emblem-xl-left-1400w.png" style="position: absolute; top: 0; left: -25%; height: 750px; z-index: 0;">
-                
-                <!-- Services Container -->
-                <div style="gap: var(--space-1-5); display: flex; align-self: flex-end; flex-direction: column; position: relative; z-index: 1; left: 50%;">
-                    <!-- Strategy Section -->
-                    <div style="display: flex; padding-left: var(--space-1-5); padding-right: var(--space-1-5); flex-direction: column;">
-                        <span class="headline services-heading">Strategy &amp; Research</span>
-                        <ul class="list">
-                            <li class="list-item">Brand Strategy &amp; Architecture</li>
-                            <li class="list-item">⁠Go-to-Market &amp; Campaign Planning</li>
-                            <li class="list-item">⁠Content &amp; Social Strategy</li>
-                            <li class="list-item">⁠Comms Planning</li>
-                            <li class="list-item">⁠Cultural Experience Design</li>
-                            <li class="list-item">⁠Cultural Intelligence &amp; Trend Forecasting</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Creative Section -->
-                    <div style="display: flex; padding-left: var(--space-1-5); padding-right: var(--space-1-5); flex-direction: column;">
-                        <span class="headline services-heading">Creative &amp; Design</span>
-                        <ul class="list">
-                            <li class="list-item">360° Campaign Development</li>
-                            <li class="list-item">⁠Brand Identity Design &amp; Evolution</li>
-                            <li class="list-item">Brand Art Direction</li>
-                            <li class="list-item">⁠Social-First Creative Development</li>
-                            <li class="list-item">⁠Messaging Frameworks</li>
-                            <li class="list-item">Influencer Strategy &amp; Programming</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Production Section -->
-                    <div style="display: flex; padding-left: var(--space-1-5); padding-right: var(--space-1-5); flex-direction: column;">
-                        <span class="headline services-heading">Production &amp; Activation</span>
-                        <ul class="list">
-                            <li class="list-item">⁠Film, Social, and Static Production</li>
-                            <li class="list-item">⁠Print &amp; Out-of-Home Production</li>
-                            <li class="list-item">Web and Digital Development</li>
-                            <li class="list-item">Experiential Production &amp; Activation</li>
-                            <li class="list-item">Global Market Adaptation &amp; Localization</li>
-                            <li class="list-item">Launch Orchestration and PR</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+			<section id="services">
+				<!-- Services Container -->
+				<div class="services-row max-width">
+					<!-- Strategy Section -->
+					<div class="service-category strategy" data-animate="fadeInUp" data-delay="0.2">
+						<h3 class="services-heading">Strategy &amp; Research</h3>
+						<ul class="service-list">
+							<li class="service-item">Brand Strategy &amp; Architecture</li>
+							<li class="service-item">Go-to-Market &amp; Campaign Planning</li>
+							<li class="service-item">Content &amp; Social Strategy</li>
+							<li class="service-item">Comms Planning</li>
+							<li class="service-item">Cultural Experience Design</li>
+							<li class="service-item">Cultural Intelligence &amp; Trend Forecasting</li>
+						</ul>
+					</div>
+					
+					<!-- Creative Section -->
+					<div class="service-category creative" data-animate="fadeInUp" data-delay="0.4">
+						<h3 class="services-heading">Creative &amp; Design</h3>
+						<ul class="service-list">
+							<li class="service-item">360° Campaign Development</li>
+							<li class="service-item">Brand Identity Design &amp; Evolution</li>
+							<li class="service-item">Brand Art Direction</li>
+							<li class="service-item">Social-First Creative Development</li>
+							<li class="service-item">Messaging Frameworks</li>
+							<li class="service-item">Influencer Strategy &amp; Programming</li>
+						</ul>
+					</div>
+					
+					<!-- Production Section -->
+					<div class="service-category production" data-animate="fadeInUp" data-delay="0.6">
+						<h3 class="services-heading">Production &amp; Activation</h3>
+						<ul class="service-list">
+							<li class="service-item">Film, Social, and Static Production</li>
+							<li class="service-item">Print &amp; Out-of-Home Production</li>
+							<li class="service-item">Web and Digital Development</li>
+							<li class="service-item">Experiential Production &amp; Activation</li>
+							<li class="service-item">Global Market Adaptation &amp; Localization</li>
+							<li class="service-item">Launch Orchestration and PR</li>
+						</ul>
+					</div>
+				</div>
+			</section>
         </main>
         
         <!-- Footer -->
@@ -207,37 +208,19 @@
                     </div>
                 </div>
                 
-                <span class="footer-copyright">&copy2024 Jockamo Barnes Inc.</span>
+                <span class="footer-copyright">&copy; 2024 Jockamo Barnes Inc.</span>
             </div>
         </footer>
     </div>
-    
-    <!-- Scripts -->
-    <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const burgerButton = document.querySelector('.burger-button');
-            const closeButton = document.querySelector('.close-menu');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            burgerButton.addEventListener('click', function() {
-                mobileMenu.classList.add('teleport-show');
-            });
-            
-            closeButton.addEventListener('click', function() {
-                mobileMenu.classList.remove('teleport-show');
-            });
-        });
-    </script>
-    
+        
     <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','G-Z94LXD0W59');
-    </script>
+	<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','G-Z94LXD0W59');
+	</script>
     
 	<!-- Add common.js reference -->
 	<script src="js/common.js"></script>

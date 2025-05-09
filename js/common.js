@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const initialLoad = document.createElement('div');
     initialLoad.classList.add('initial-load');
     initialLoad.innerHTML = `
-        <div class="load-content">
+		<div class="load-content" style="display: flex; flex-direction: column; align-items: center;">
             <img src="public/image/img-creme-emblem-250px-200h.png" class="load-logo" alt="Jockamo Barnes">
             <div class="load-text">Cultural Instigators</div>
         </div>
@@ -423,4 +423,82 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/**
+ * Simplified Services Section Animation
+ * A more subtle approach with minimal animations
+ */
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Only initialize animations if we're on the what-we-do page
+  if (document.querySelector('.services-section') || document.querySelector('#what-we-do')) {
+    initSimplifiedServicesAnimation();
+  }
+});
+
+/**
+ * Initialize simplified animations for horizontal services layout
+ */
+function initSimplifiedServicesAnimation() {
+  // Get service categories
+  const serviceCategories = document.querySelectorAll('.service-category');
+  
+  // If no services content found, exit early
+  if (serviceCategories.length === 0) return;
+  
+  // Create an intersection observer for triggering animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // When services section enters viewport
+      if (entry.isIntersecting) {
+        // Simple fade-in for all categories together
+        serviceCategories.forEach(category => {
+          // Start with opacity 0
+          category.style.opacity = '0';
+          category.style.transform = 'translateY(15px)';
+          category.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+          
+          // Short delay before animation starts
+          setTimeout(() => {
+            category.style.opacity = '1';
+            category.style.transform = 'translateY(0)';
+          }, 300);
+        });
+        
+        // Stop observing after animation is triggered
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15, // Trigger when 15% visible
+    rootMargin: '0px 0px -5% 0px' // Adjust trigger point
+  });
+  
+  // Start observing the services section
+  const servicesSection = document.querySelector('.services-row') || 
+                          document.querySelector('.services-section');
+  if (servicesSection) {
+    observer.observe(servicesSection);
+  }
+  
+  // Simplified hover effects for each category
+  serviceCategories.forEach(category => {
+    // Get the heading
+    const heading = category.querySelector('.services-heading');
+    
+    // Add restrained hover effect for the entire category
+    category.addEventListener('mouseenter', () => {
+      // Subtle color change for the heading only
+      if (heading) {
+        heading.style.color = 'var(--color-primary-2)';
+        heading.style.transition = 'color 0.3s ease';
+      }
+    });
+    
+    category.addEventListener('mouseleave', () => {
+      // Reset color on mouse leave
+      if (heading) {
+        heading.style.color = '';
+      }
+    });
+  });
+}
