@@ -18,6 +18,17 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     
+    <!-- Add this style for font display -->
+    <style>
+        @font-face {
+            font-family: "Sink";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("public/fonts/sink.otf") format("opentype");
+        }
+    </style>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/main.css">
     
@@ -26,28 +37,31 @@
     <!-- Main Container -->
     <div class="container">
         <!-- Navigation -->
-        <header class="navbar">
-            <div class="navbar-interactive">
-                <a href="index.html" aria-label="Home">
-                    <img alt="Jockamo Barnes Inc." src="public/image/img-logo-default-200h.png" class="navbar-logo">
-                </a>
-                
-                <!-- Desktop Menu -->
-                <nav class="desktop-menu">
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-link nav-text">Home</a>
-                        <a href="about.html" class="nav-link nav-text">About</a>
-                        <a href="what-we-do.html" class="nav-link nav-text">Work</a>
-                        <a href="mailto:hello@jockamobarnes.com?subject=" class="nav-link nav-text">Contact</a>
-                    </div>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <div class="burger-button" aria-label="menu" role="button" tabindex="0">
-                    <svg viewBox="0 0 1024 1024" class="burger-icon">
-                        <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
-                    </svg>
-                </div>
+		<header class="navbar" id="main-navbar">
+			<div class="navbar-interactive">
+				<!-- Logo Container with fixed width -->
+				<div class="logo-container">
+					<a href="index.html" aria-label="Home">
+						<img alt="Jockamo Barnes Inc." src="public/image/img-logo-default-200h.png" class="navbar-logo">
+					</a>
+				</div>
+				
+				<!-- Desktop Menu -->
+				<nav class="desktop-menu">
+					<div class="nav-links">
+						<a href="index.html" class="nav-link nav-text">Home</a>
+						<a href="about.html" class="nav-link nav-text">About</a>
+						<a href="what-we-do.html" class="nav-link nav-text">Work</a>
+						<a href="mailto:hello@jockamobarnes.com?subject=" class="nav-link nav-text">Contact</a>
+					</div>
+				</nav>
+				
+				<!-- Mobile Menu Button -->
+				<div class="burger-button" aria-label="menu" role="button" tabindex="0">
+					<svg viewBox="0 0 1024 1024" class="burger-icon">
+						<path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+					</svg>
+				</div>
                 
                 <!-- Mobile Menu -->
                 <div class="mobile-menu">
@@ -89,16 +103,54 @@
         </header>
         
         <!-- Main Content -->
-        <main class="max-width">
-            <p class="manifesto">People often ask US, "What makes you so different? How are you better than the rest?" We'd love to be like the rest — If the rest was made of people who believed in themselves.</p>
-            <p class="manifesto">People who took a stand against boredom.</p>
-            <p class="manifesto">Against a flood of stale, formulaic, lifeless, unimaginative forgettable ads with the sterility of hospital sheets.</p>
-            <p class="manifesto">Us? We like it dirty.</p>
-            <p class="manifesto">We don't do "safe." we do soul. we don't do "seen it before." We do "how the hell did they think of that?" Our work doesn't tuck people in — it wakes them up.</p>
-            <p class="manifesto">So yes, Maybe we are a little different. Maybe we say things we shouldn't. Maybe we question things that others kneel to. But we do it with intent. With guts. With necessary madness. Keep your comfort zones. We'll be over here, making everyone uncomfortable.</p>
-            <p class="manifesto">We're not better than anyone.</p>
-            <p class="manifesto" style="color: var(--color-primary);">We're just not interested<br>in being like them.</p>
-        </main>
+		<main class="max-width">
+			<!-- Add a spacer for the fixed navbar if needed -->
+			<div id="navbar-spacer" class="hidden-spacer"></div>
+			
+			<!-- Updated manifesto structure with animation classes -->
+			<p class="manifesto manifesto-item" data-delay="0">
+				People often ask US, "What makes you so different? How are you better than the rest?" We'd love to be like the rest — 
+				If the rest was made of people who believed in themselves.
+			</p>
+			
+			<p class="manifesto manifesto-item" data-delay="100">
+				People who took <span class="highlight-text">a stand against boredom.</span>
+			</p>
+			
+			<p class="manifesto manifesto-item" data-delay="200">
+				Against a flood of stale, formulaic, lifeless, unimaginative forgettable ads with the sterility of hospital sheets.
+			</p>
+			
+			<p class="manifesto manifesto-item" data-delay="300">
+				Us? We like it <span class="underline-text">dirty.</span>
+			</p>
+			
+			<p class="manifesto manifesto-item" data-delay="400">
+				We don't do "safe." we do soul. we don't do "seen it before." We do 
+				"how the hell did they think of that?"
+				Our work doesn't tuck people in — it wakes them up.
+			</p>
+			
+			<p class="manifesto manifesto-item" data-delay="500">
+				So yes, Maybe we are a little different. Maybe we say things we shouldn't. Maybe we question things that others kneel to.
+			</p>
+
+			<p class="manifesto manifesto-item" data-delay="600">			
+				But we do it with <span class="underline-text">intent</span>. With <span class="underline-text">guts</span>. With <span class="underline-text">necessary madness</span>.
+			</p>
+
+			<p class="manifesto manifesto-item" data-delay="700">	
+				You can keep your comfort zones. We'll be over here, making everyone uncomfortable.
+			</p>
+			
+			<p class="manifesto manifesto-item" data-delay="900">
+				We're not better than anyone.
+			</p>
+			
+			<p class="manifesto manifesto-item emphasis-text" data-delay="1000" style="color: var(--color-primary);">
+				We're just not interested<br>in being like them.
+			</p>
+		</main>
         
         <!-- Footer -->
         <footer class="footer">
@@ -141,31 +193,36 @@
         </footer>
     </div>
     
-    <!-- Scripts -->
-    <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const burgerButton = document.querySelector('.burger-button');
-            const closeButton = document.querySelector('.close-menu');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            burgerButton.addEventListener('click', function() {
-                mobileMenu.classList.add('teleport-show');
-            });
-            
-            closeButton.addEventListener('click', function() {
-                mobileMenu.classList.remove('teleport-show');
-            });
-        });
-    </script>
     
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','G-Z94LXD0W59');
-    </script>
+    
+	<!-- Scripts -->
+	<script>
+		// Mobile menu functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const burgerButton = document.querySelector('.burger-button');
+			const closeButton = document.querySelector('.close-menu');
+			const mobileMenu = document.querySelector('.mobile-menu');
+			
+			burgerButton.addEventListener('click', function() {
+				mobileMenu.classList.add('teleport-show');
+			});
+			
+			closeButton.addEventListener('click', function() {
+				mobileMenu.classList.remove('teleport-show');
+			});
+		});
+	</script>
+	
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','G-Z94LXD0W59');
+	</script>
+	
+	<!-- Add common.js reference -->
+	<script src="js/common.js"></script>
 </body>
 </html>

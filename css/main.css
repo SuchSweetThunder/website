@@ -121,6 +121,139 @@ h1, h2, h3 {
   line-height: 0.95em;
   text-transform: uppercase;
   margin-bottom: 0.5em;
+  position: relative;
+    
+  /* Animation base state */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;  
+}
+
+/* Animated state */
+.manifesto.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Special styling for highlight and underline text */
+.highlight-text, .underline-text {
+    position: relative;
+    display: inline-block;
+    transition: color 0.6s ease;
+}
+
+
+/* HIGHLIGHTING EFFECT - changes background color */
+.highlight-text {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(to right, rgba(255, 80, 5, 0.15), rgba(255, 80, 5, 0.05));
+    background-size: 0% 100%; /* Start with 0 width */
+    background-position: 0 90%;
+    background-repeat: no-repeat;
+	transition: background-size 1.5s ease-out, color 1.2s ease-out;
+}
+
+/* Active state triggered by JavaScript on scroll */
+.highlight-text.active {
+	color: var(--color-primary);
+    background-image: linear-gradient(to right, rgba(255, 80, 5, 0.15), rgba(255, 80, 5, 0.05));
+    background-size: 100% 100%; */
+}
+
+/* UNDERLINING EFFECT - adds an animated underline */
+.underline-text {
+    position: relative;
+}
+
+.underline-text::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.1em;
+    background-color: var(--color-primary-2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.underline-text.active::before {
+    transform: scaleX(1);
+}
+
+/* Optional animation for additional impact */
+@keyframes textEmphasis {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+@keyframes highlightSweep {
+    0% {
+        background-size: 0% 100%;
+        color: inherit;
+    }
+    70% {
+        background-size: 100% 100%;
+        color: inherit;
+    }
+    100% {
+        background-size: 100% 100%;
+        color: var(--color-primary);
+    }
+}
+
+.highlight-text.active, .underline-text.active {
+    animation: textEmphasis 2s ease-in-out;
+}
+
+
+
+/* For older browsers that don't animate font-weight well */
+@supports (font-variation-settings: normal) {
+    .weight-text {
+        font-variation-settings: 'wght' 400;
+        transition: font-variation-settings 0.4s ease, letter-spacing 0.4s ease, color 0.4s ease;
+    }
+    
+    .weight-text.active {
+        font-variation-settings: 'wght' 700;
+    }
+}
+/* Special emphasis for the final line */
+.emphasis-text {
+    font-size: clamp(35px, 7vw, 65px);
+    line-height: 0.9;
+}
+
+/* Animation for staggered entry of manifesto paragraphs */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query adjustments for smaller screens */
+@media (max-width: 767px) {
+    .manifesto {
+        line-height: 1em;
+        letter-spacing: -0.01em;
+        margin-bottom: 1em;
+    }
+    
+    .emphasis-text {
+        font-size: clamp(30px, 6vw, 55px);
+    }
 }
 
 .content {
@@ -314,6 +447,36 @@ h1, h2, h3 {
   display: flex;
   position: relative;
   justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-container {
+    width: 200px; /* Fixed width that doesn't change */
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(11, 11, 11, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 12px 0;
+}
+
+.navbar-fixed .navbar-logo {
+    height: 2.5rem;
+}
+
+.navbar-fixed .logo-container {
+    height: 2.5rem;
 }
 
 .navbar-interactive {
@@ -328,12 +491,38 @@ h1, h2, h3 {
   height: 3rem;
   background-size: cover;
   background-image: url("public/image/img-logo-default-200h.png");
+  transition: height 0.3s ease;
 }
 
 .desktop-menu {
   flex: 1;
   display: none;
   justify-content: space-between;
+}
+
+/* Enhanced nav links */
+.nav-link {
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    color: var(--color-neutral-light);
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Pure white on hover as requested */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Subtle glow effect */
+}
+
+/* Navigation spacer for fixed header */
+.nav-spacer {
+    display: none;
+    height: 0;
+    transition: height 0.4s ease;
+}
+
+.nav-spacer.active {
+    display: block;
+    height: 80px; /* Adjust to match navbar height */
 }
 
 .nav-links {
@@ -349,10 +538,65 @@ h1, h2, h3 {
   display: flex;
 }
 
+/* Burger and close button enhancements */
+.burger-button, .close-menu {
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.burger-button:hover, .close-menu:hover {
+    transform: scale(1.1);
+}
+
+.burger-icon, .close-icon {
+    transition: fill 0.3s ease;
+}
+
+.burger-button:hover .burger-icon,
+.close-menu:hover .close-icon {
+    fill: #ffffff; /* Pure white on hover */
+}
+
 .burger-icon {
   width: 36px;
   height: 36px;
   cursor: pointer;
+}
+
+/* Enhanced mobile menu */
+.mobile-menu {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+}
+
+.burger-menu {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.burger-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-neutral-light);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.burger-menu:hover {
+    transform: translateX(10px);
+    color: #ffffff; /* Pure white on hover */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); /* Subtle glow effect */
+}
+
+.burger-menu:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .mobile-menu {
@@ -417,6 +661,44 @@ h1, h2, h3 {
 .social-links {
   gap: var(--space-1-5);
   display: flex;
+}
+
+/* Additional CSS for enhanced desktop navigation */
+.desktop-menu .nav-links {
+    gap: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.desktop-menu .nav-link {
+    position: relative;
+    padding: 6px 0;
+    font-weight: 500;
+    transform-origin: center;
+    transition: color 0.35s cubic-bezier(0.19, 1, 0.22, 1), transform 0.35s ease;
+}
+
+.desktop-menu .nav-link:hover {
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* Add subtle pulse animation to nav links */
+@keyframes navPulse {
+    0% {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+}
+
+.desktop-menu .nav-link:hover {
+    animation: navPulse 1.5s infinite;
 }
 
 /* Footer */
@@ -538,24 +820,12 @@ h1, h2, h3 {
   width: 35px;
   height: auto;
   object-fit: contain;
-  transition: 0.3s;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-btn:hover {
-  filter: brightness(75%);
-}
-
-/* Team components */
-.team-img {
-  width: 200px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.team-title {
-  font-size: 24px;
-  font-weight: 600;
-  text-transform: uppercase;
+    transform: translateY(-3px);
+    filter: brightness(1.2); /* Brighten slightly instead of reducing opacity */
 }
 
 /* Lists */
@@ -590,6 +860,15 @@ h1, h2, h3 {
   border: 1px solid var(--color-neutral-light);
   border-radius: 4px;
   background-color: var(--color-neutral-dark);
+}
+
+.hidden-spacer {
+    height: 0;
+    transition: height 0.3s ease;
+}
+
+.hidden-spacer.active {
+    height: 80px; /* Should match the height of your fixed navbar */
 }
 
 /* ==========================================================================
@@ -640,6 +919,142 @@ h1, h2, h3 {
 
 .gap-2 {
   gap: var(--space-2);
+}
+
+/* Enable smooth scrolling globally */
+html {
+    scroll-behavior: smooth;
+}
+
+/* For browsers that support it, add additional customization */
+@supports (scroll-behavior: smooth) {
+    .smooth-scroll {
+        scroll-behavior: smooth;
+    }
+    
+}
+
+/* Add focus styles for keyboard navigation */
+a:focus, button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Page Transitions - Add to main.css */
+
+/* Container for transition overlay */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-neutral-dark);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-transition.active {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Transition animation */
+.transition-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.transition-logo {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.page-transition.active .transition-logo {
+    animation: logoReveal 0.8s ease forwards 0.2s;
+}
+
+@keyframes logoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* For page load transitions */
+.initial-load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-neutral-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.initial-load.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.load-content {
+    text-align: center;
+}
+
+.load-logo {
+    width: 120px;
+    height: 120px;
+    animation: pulseLogo 2s infinite ease-in-out;
+}
+
+.load-text {
+    margin-top: 20px;
+    font-family: "Sink", sans-serif;
+    color: var(--color-neutral-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
+}
+
+@keyframes pulseLogo {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ==========================================================================
