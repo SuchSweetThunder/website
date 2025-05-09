@@ -32,24 +32,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/main.css">
     
-    <style>
-        /* Ensure headers have equal width by setting the same font size */
-        .header-line {
-            font-family: "Sink", sans-serif;
-            font-size: clamp(40px, 7vw, 110px);
-            line-height: 0.85;
-            text-transform: uppercase;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .header-line-accent {
-            color: var(--color-primary);
-        }
-    </style>
 </head>
 <body>
     <!-- Main Container -->
@@ -121,80 +103,81 @@
         </header>
         
         <!-- Main Content -->
-        <main>
+        <main id="about">
 			<!-- Add a spacer for the fixed navbar if needed -->
 			<div id="navbar-spacer" class="hidden-spacer"></div>
 			        
-            <!-- About Us Header Section - Now with equal width headers -->
-            <section class="max-width">
-                <!-- Animated headings with consistent sizes -->
-                <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 0s; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="header-line">
-                        We're a creative agency
-                    </h1>
-                </div>
-                
-                <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 200ms; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="header-line">
-                        that helps brands
-                    </h1>
-                </div>
-                
-                <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 400ms; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="header-line header-line-accent">
-                        instigate culture.
-                    </h1>
-                </div>
-                
-                <img alt="Jockamo Barnes team" src="public/image/characters-1400w.jpg" loading="lazy" class="about-us-image" style="align-self: center; object-fit: cover; padding-top: var(--space-4); padding-bottom: var(--space-4);">
-                
-                <p class="content" style="width: 100%; max-width: 800px; margin-bottom: 1.5em;">
-                    We're an independent creative agency who believes that the way its always been isn't always the best way. The Middle East deserves more than yesterday's marketing tricks and we're on a mission to solve that.
-                </p>
-                
-                <p class="content" style="width: 100%; max-width: 800px; padding-bottom: 1.5em;">
-                    Our philosophy is simple: Make something strange. Make it true. Make it yours.
-                </p>
-                
-                <p class="content" style="width: 100%; max-width: 800px;">
-                    Because in the end, no one cares if you're not interesting.
-                </p>
-            </section>
-            
-            <!-- Contact Section with Sand Background -->
-            <section style="gap: var(--space-5); flex: 0 0 auto; color: var(--color-neutral-dark); display: flex; min-width: 100%; align-items: center; flex-direction: column; background-size: cover; justify-content: flex-start; background-image: url('public/backgrounds/bg-cremesand-1500w.jpg');">
-                <div class="grid-layout" style="display: grid; place-items: start;">
-                    <h3 class="headline" style="font-size: clamp(30px, 4vw, 45px); grid-row: 2/4; grid-column: 2/10;">
-                        Call Me, Beep Me,<br>
-                        If you want to Reach me
-                    </h3>
-                    
-                    <!-- Contact Information -->
-                    <div style="gap: 0; display: flex; grid-row: 2/4; flex-direction: column; grid-column: 13/18;">
-                        <h4 class="content" style="line-height: 1.25;">
-                            <strong>New Business</strong><br>
-                        </h4>
-                        <a href="mailto:newbiz@jockamobarnes.com?subject=" class="under-link small-text" style="margin-bottom: var(--space-1-5);">newbiz@jockamobarnes.com</a>
-                        
-                        <h4 class="content" style="line-height: 1.25;">
-                            <strong>Press</strong><br>
-                        </h4>
-                        <a href="mailto:press@jockamobarnes.com?subject=" class="under-link small-text" style="margin-bottom: var(--space-1-5);">press@jockamobarnes.com</a>
-                        
-                        <h4 class="content" style="font-weight: 700; line-height: 1.25;">Careers</h4>
-                        <a href="mailto:careers@jockamobarnes.com?subject=" class="under-link small-text">careers@jockamobarnes.com</a>
-                    </div>
-                    
-                    <p class="content" style="line-height: 1.25; grid-row: 2; grid-column: 19/22;">
-                        <strong>Headquarters</strong><br>
-                        Yas Creative<br>
-                        Tower 1<br>
-                        Abu Dhabi, UAE
-                    </p>
-                </div>
-            </section>
-        </main>
-        
+			<!-- About Us Section -->
+			<section id="about-us">
+				<div class="headline-container max-width">
+					<h2 class="headline-1">We're a creative agency</h2>
+					<h2 class="headline-2">that helps brands</h2>
+					<h2 class="headline-3 headline-accent">instigate culture.</h2>
+				</div>
+
+				<img alt="Jockamo Barnes team" src="public/image/characters-1400w.jpg" loading="lazy" class="about-us-image">
+				
+				<div class="content-container max-width">
+					<p class="content" style="margin-bottom: 1.5em;">
+						We're an independent creative agency who believes that the way its always been isn't always the best way. The Middle East deserves more than yesterday's marketing tricks and we're on a mission to solve that.
+					</p>
+					
+					<p class="content" style="padding-bottom: 1.5em;">
+						Our philosophy is simple: Make something strange. Make it true. Make it yours.
+					</p>
+					
+					<p class="content">
+						Because in the end, no one cares if you're not interesting.
+					</p>
+				</div>
+			</section>
+
+			<!-- CONTACT section -->
+			<section id="contact" style="
+				width: 100%;
+				background-image: url('public/backgrounds/bg-cremesand-1500w.jpg');
+				background-size: cover;
+				background-position: center;
+				color: #0b0b0b;
+				padding: 0;
+			">
+				<div class="max-width">
+					<div class="contact-content">
+						<!-- Heading -->
+						<div class="contact-heading">
+							<h2 class="headline">Call Me, Beep Me,<br>If you want to reach me</h2>
+						</div>
+						
+						<!-- Contact Info -->
+						<div class="contact-info">
+							<div class="contact-group">
+								<h3>New Business</h3>
+								<a href="mailto:newbiz@jockamobarnes.com" class="contact-link">newbiz@jockamobarnes.com</a>
+							</div>
+							
+							<div class="contact-group">
+								<h3>Press</h3>
+								<a href="mailto:press@jockamobarnes.com" class="contact-link">press@jockamobarnes.com</a>
+							</div>
+							
+							<div class="contact-group">
+								<h3>Careers</h3>
+								<a href="mailto:careers@jockamobarnes.com" class="contact-link">careers@jockamobarnes.com</a>
+							</div>
+						</div>
+						
+						<!-- Location -->
+						<div class="contact-location">
+							<h3>Headquarters</h3>
+							<address>
+								Yas Creative<br>
+								Tower 1<br>
+								Abu Dhabi, UAE
+							</address>
+						</div>
+					</div>
+				</div>
+			</section>	
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-content grid-layout">
@@ -202,7 +185,7 @@
                 
                 <div class="footer-hellos">
                     <h5 class="small-title">We're fans of bold brands and people.<br>If that sounds like you, give us a shout.</h5>
-                    <a href="mailto:hello@jockamobarnes.com" class="under-link small-text">hello@jockamobarnes.com</a>
+                    <a href="mailto:hello@jockamobarnes.com" class="contact-link small-text">hello@jockamobarnes.com</a>
                 </div>
                 
                 <div class="footer-homes">

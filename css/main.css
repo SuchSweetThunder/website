@@ -297,29 +297,6 @@ h1, h2, h3 {
   font-size: clamp(14px, 1.8vw, 16px);
 }
 
-/* About page specific headings */
-.about-header-text {
-  font-family: "Sink", sans-serif;
-  line-height: 0.8;
-  text-transform: uppercase;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.about-header-1 {
-  font-size: clamp(45px, 8vw, 123px);
-}
-
-.about-header-2 {
-  font-size: clamp(50px, 9vw, 160px);
-}
-
-.about-header-3 {
-  color: var(--color-primary);
-  font-size: clamp(55px, 10vw, 167px);
-}
 
 /* What we do page headings */
 .what-we-do-heading-1 {
@@ -375,6 +352,7 @@ h1, h2, h3 {
   --color-neutral-dark: #0b0b0b;
   
   /* Spacing */
+  --space-quarter: 4px;
   --space-half: 8px;
   --space-1: 16px;
   --space-1-5: 24px;
@@ -701,6 +679,185 @@ h1, h2, h3 {
     animation: navPulse 1.5s infinite;
 }
 
+/*  ========================
+	ABOUT US Page Styles 
+========================  */
+	
+main#about, main#what { width: 100%; }
+	
+	#about-us, #contact, #what-we-do {
+	  padding: 0;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	.headline-container {
+	  padding-bottom: var(--space-2);
+	  display: flex;
+	  flex-direction: column;
+
+	}
+
+	.headline-container h2 {
+	  font-family: "Sink", sans-serif;
+	  font-weight: 400;
+	  line-height: 0.85;
+	  text-transform: uppercase;
+	  margin: 0;
+	  padding: 0;
+	}
+	
+	h2.headline-1 { font-size: clamp(35px, 8vw, 123px);}
+	h2.headline-2 { font-size: clamp(50px, 10.4vw, 160px);}
+	h2.headline-3 { font-size: clamp(40px, 10.8vw, 167px);}
+	h2.headline-accent { color: var(--color-primary); }
+
+	#what h2.headline-1 { font-size: clamp(45px, 8vw, 120px);}
+	#what h2.headline-2 { font-size: clamp(44px, 7.9vw, 118px);}
+	#what h2.headline-3 { font-size: clamp(41px, 7.35vw, 110px);}
+	
+	.about-us-image {
+	  width: 100%;
+	  max-width: 1400px;
+	  height: auto;
+	  object-fit: cover;
+	  padding-top: var(--space-2);
+	  padding-bottom: var(--space-2);
+	}
+	
+	.content-container {
+	  width: 100%;
+	  display: flex;
+	  flex-direction: column;
+	}
+	
+	.content-container p {
+	  text-align: left;
+	  max-width: 800px;
+	}
+	
+	#what .content-container { padding-top: 0; }
+	#what .content-container p { max-width: 500px; }
+	
+	/* Modern full-width section base styles */
+	.full-width-section {
+	  width: 100%;
+	  padding: var(--space-5) 0;
+	  position: relative;
+	}
+	
+	/* CONTACT SECTION */
+	#contact { }
+	#contact a { color: #0b0b0b; }
+	#contact a::after { background: #0b0b0b; }
+	
+	#contact .max-width { 
+	}
+	
+	/* Contact content layout */
+	.contact-content {
+	  display: grid;
+	  grid-template-columns: 1.5fr 1fr 0.8fr;
+	  gap: var(--space-3);
+	}
+	
+	/* Contact heading */
+	.contact-heading h2 {
+	  font-family: "Sink", sans-serif;
+	  font-size: clamp(30px, 4vw, 45px);
+	  line-height: 0.9;
+	  text-transform: uppercase;
+	  margin: 0;
+	  padding-right: var(--space-2); /* Add breathing room */
+	}
+	
+	/* Contact info section */
+	.contact-info {
+	  display: flex;
+	  flex-direction: column;
+	  gap: var(--space-1-5);
+	}
+	
+	.contact-group {
+	  margin-bottom: var(--space-1);
+	}
+	
+	/* Contact location */
+	.contact-location address {
+	  font-style: normal;
+	  font-size: clamp(12px, 1.5vw, 14px);
+	  margin-top: var(--space-half);
+	  line-height: 1.25;
+	}
+	
+	/* Headings in contact section */
+	#contact h3 {
+	  font-weight: 800;
+	  font-size: clamp(16px, 2vw, 18px);
+	  font-family: "Figtree", sans-serif;
+	}
+	
+	/* Links in contact section */
+	.contact-link {
+	  position: relative;
+	  display: inline-block;
+	  color: #0b0b0b;
+	  font-size: clamp(12px, 1.5vw, 14px);
+	  transition: transform 0.3s ease;
+	}
+	
+	.contact-link::after {
+	  content: '';
+	  position: absolute;
+	  bottom: -2px;
+	  left: 0;
+	  width: 100%;
+	  height: 1px;
+	  background-color: #0b0b0b;
+	  transform: scaleX(0);
+	  transform-origin: right;
+	  transition: transform 0.3s ease;
+	}
+	
+	.contact-link:hover {
+	  transform: translateY(-1px);
+	}
+	
+	.contact-link:hover::after {
+	  transform: scaleX(1);
+	  transform-origin: left;
+	}
+	
+	/* Responsive adjustments */
+	@media (max-width: 991px) {
+	  .contact-content {
+		grid-template-columns: 1fr 1fr;
+	  }
+	  
+	  .contact-heading {
+		grid-column: 1 / -1;
+		margin-bottom: var(--space-2);
+	  }
+	}
+	
+	@media (max-width: 767px) {
+	  .contact-content {
+		grid-template-columns: 1fr;
+		gap: var(--space-2);
+	  }
+	  
+	  .contact-heading {
+		margin-bottom: var(--space-1);
+	  }
+	  
+	  .contact-info, 
+	  .contact-location {
+		margin-top: var(--space-1);
+	  }
+	}
+
+
 /* Footer */
 .footer {
   width: 100%;
@@ -728,6 +885,15 @@ h1, h2, h3 {
   flex-direction: column;
   grid-column: 6 / 11;
 }
+
+.footer-hellos .contact-link {
+	  color: var(--color-neutral-light);
+	  width: 180px;
+	}
+	
+.footer-hellos .contact-link::after {
+	  background-color: var(--color-neutral-light);
+	}
 
 .footer-homes {
   gap: var(--space-1);
@@ -940,7 +1106,7 @@ a:focus, button:focus {
     outline-offset: 2px;
 }
 
-/* Page Transitions - Add to main.css */
+/* Page Transitions */
 
 /* Container for transition overlay */
 .page-transition {

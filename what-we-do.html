@@ -18,6 +18,17 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     
+    <!-- Add this style for font display -->
+    <style>
+        @font-face {
+            font-family: "Sink";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("public/fonts/sink.otf") format("opentype");
+        }
+    </style>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/main.css">
     
@@ -26,34 +37,37 @@
     <!-- Main Container -->
     <div class="container">
         <!-- Navigation -->
-        <header class="navbar">
-            <div class="navbar-interactive">
-                <a href="index.html" aria-label="Home">
-                    <img alt="Jockamo Barnes Inc." src="public/image/img-logo-default-200h.png" class="navbar-logo">
-                </a>
-                
-                <!-- Desktop Menu -->
-                <nav class="desktop-menu">
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-link nav-text">Home</a>
-                        <a href="about.html" class="nav-link nav-text">About</a>
-                        <a href="what-we-do.html" class="nav-link nav-text">Work</a>
-                        <a href="mailto:hello@jockamobarnes.com" class="nav-link nav-text">Contact</a>
-                    </div>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <div class="burger-button" aria-label="menu" role="button" tabindex="0">
-                    <svg viewBox="0 0 1024 1024" class="burger-icon">
-                        <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
-                    </svg>
-                </div>
+		<header class="navbar" id="main-navbar">
+			<div class="navbar-interactive">
+				<!-- Logo Container with fixed width -->
+				<div class="logo-container">
+					<a href="index.html" aria-label="Home">
+						<img alt="Jockamo Barnes Inc." src="public/image/img-logo-default-200h.png" class="navbar-logo">
+					</a>
+				</div>
+				
+				<!-- Desktop Menu -->
+				<nav class="desktop-menu">
+					<div class="nav-links">
+						<a href="index.html" class="nav-link nav-text">Home</a>
+						<a href="about.html" class="nav-link nav-text">About</a>
+						<a href="what-we-do.html" class="nav-link nav-text">Work</a>
+						<a href="mailto:hello@jockamobarnes.com?subject=" class="nav-link nav-text">Contact</a>
+					</div>
+				</nav>
+				
+				<!-- Mobile Menu Button -->
+				<div class="burger-button" aria-label="menu" role="button" tabindex="0">
+					<svg viewBox="0 0 1024 1024" class="burger-icon">
+						<path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+					</svg>
+				</div>
                 
                 <!-- Mobile Menu -->
                 <div class="mobile-menu">
                     <div class="mobile-nav">
                         <div class="mobile-top">
-                            <img alt="Jockamo Barnes Inc." src="public/image/emblem-white-200h.png" class="mobile-logo">
+                            <img alt="Jockamo Barnes Inc." src="public/image/emblem-white-1500h.png" class="mobile-logo">
                             <div class="close-menu" aria-label="close menu" role="button" tabindex="0">
                                 <svg viewBox="0 0 1024 1024" class="close-icon">
                                     <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
@@ -65,7 +79,7 @@
                             <a href="index.html" class="burger-menu">Home</a>
                             <a href="about.html" class="burger-menu">About</a>
                             <a href="what-we-do.html" class="burger-menu">Work</a>
-                            <a href="mailto:hello@jockamobarnes.com" class="burger-menu">Contact</a>
+                            <a href="mailto:hello@jockamobarnes.com?subject=" class="burger-menu">Contact</a>
                         </nav>
                     </div>
                     
@@ -89,29 +103,23 @@
         </header>
         
         <!-- Main Content -->
-        <main>
+        <main id="what">
+			<!-- Add a spacer for the fixed navbar if needed -->
+			<div id="navbar-spacer" class="hidden-spacer"></div>
+			        
             <!-- Hero Section -->
-            <section class="max-width">
-                <!-- Animated headings with responsive classes -->
-                <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 0s; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="headline what-we-do-heading-1">
-                        We create <span style="color: var(--color-primary-2);">unexpected</span>
-                    </h1>
-                </div>
-                
-                <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 200ms; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="headline what-we-do-heading-2">
-                        and <span style="color: var(--color-primary-2);">unignorable</span> brand
-                    </h1>
-                </div>
-                
-                <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 400ms; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="headline what-we-do-heading-3">ideas that drive culture.</h1>
-                </div>
-                
-                <p class="content" style="width: 100%; max-width: 585px; padding-top: var(--space-1-5);">
-                    We are a full-service agency with capabilities in advertising, brand, design, culture, and production. We're equipped with the skills and partnerships that allow us to seamlessly do this throughout the region.
-                </p>
+            <section id="what-we-do">
+				<div class="headline-container max-width">            
+					<h2 class="headline-1">We create <span style="color: var(--color-primary-2);">unexpected</span></h2>
+					<h2 class="headline-2">and <span style="color: var(--color-primary-2);">unignorable</span> brand</h2>
+					<h2 class="headline-3">ideas that drive culture.</h2>
+				</div>
+
+				<div class="content-container max-width">
+					<p class="content">
+	                    We are a full-service agency with capabilities in advertising, brand, design, culture, and production. We're equipped with the skills and partnerships that allow us to seamlessly do this throughout the region.
+					</p>
+				</div>				                
             </section>
             
             <!-- Services Section -->
@@ -170,7 +178,7 @@
                 
                 <div class="footer-hellos">
                     <h5 class="small-title">We're fans of bold brands and people.<br>If that sounds like you, give us a shout.</h5>
-                    <a href="mailto:hello@jockamobarnes.com" class="under-link small-text">hello@jockamobarnes.com</a>
+                    <a href="mailto:hello@jockamobarnes.com" class="contact-link small-text">hello@jockamobarnes.com</a>
                 </div>
                 
                 <div class="footer-homes">
@@ -231,5 +239,7 @@
         })(window,document,'script','dataLayer','G-Z94LXD0W59');
     </script>
     
+	<!-- Add common.js reference -->
+	<script src="js/common.js"></script>
 </body>
 </html>
