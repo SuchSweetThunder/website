@@ -327,7 +327,7 @@ h1, h2, h3 {
 .navbar-logo {
   height: 3rem;
   background-size: cover;
-  background-image: url("public/image/img-logo-default-1500h.png");
+  background-image: url("public/image/img-logo-default-200h.png");
 }
 
 .desktop-menu {

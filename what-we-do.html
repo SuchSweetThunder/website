@@ -5,10 +5,9 @@
     <meta name="description" content="Jockamo Barnes is an independent creative agency known for creating ideas that help brands instigate culture.">
     <meta property="og:title" content="What We Do - Jockamo Barnes | Cultural Instigators">
     <meta property="og:description" content="Jockamo Barnes is an independent creative agency known for creating ideas that help brands instigate culture.">
-    <meta property="og:image" content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/7164dce6-666e-4bb3-a45b-177750966277/0863238e-f45d-4e68-9a20-194424d821a6?org_if_sml=1&amp;force_format=original">
+    <meta property="og:image" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta property="twitter:card" content="summary_large_image">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="public/favicon.png" type="icon/png" sizes="32x32">
@@ -22,27 +21,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/main.css">
     
-    <!-- Animation library -->
-    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css">
-    
-    <style>
-        /* Ensure headers have equal width by setting the same font size */
-        .header-line {
-            font-family: "Sink", sans-serif;
-            font-size: clamp(40px, 7vw, 110px);
-            line-height: 0.85;
-            text-transform: uppercase;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .header-line-accent {
-            color: var(--color-primary-2);
-        }
-    </style>
 </head>
 <body>
     <!-- Main Container -->
@@ -51,7 +29,7 @@
         <header class="navbar">
             <div class="navbar-interactive">
                 <a href="index.html" aria-label="Home">
-                    <img alt="Jockamo Barnes Inc." src="public/image/img-logo-default-1500h.png" class="navbar-logo">
+                    <img alt="Jockamo Barnes Inc." src="public/image/img-logo-default-200h.png" class="navbar-logo">
                 </a>
                 
                 <!-- Desktop Menu -->
@@ -60,7 +38,7 @@
                         <a href="index.html" class="nav-link nav-text">Home</a>
                         <a href="about.html" class="nav-link nav-text">About</a>
                         <a href="what-we-do.html" class="nav-link nav-text">Work</a>
-                        <a href="mailto:hello@jockamobarnes.com?subject=" class="nav-link nav-text">Contact</a>
+                        <a href="mailto:hello@jockamobarnes.com" class="nav-link nav-text">Contact</a>
                     </div>
                 </nav>
                 
@@ -75,7 +53,7 @@
                 <div class="mobile-menu">
                     <div class="mobile-nav">
                         <div class="mobile-top">
-                            <img alt="Jockamo Barnes Inc." src="public/image/emblem-white-1500h.png" class="mobile-logo">
+                            <img alt="Jockamo Barnes Inc." src="public/image/emblem-white-200h.png" class="mobile-logo">
                             <div class="close-menu" aria-label="close menu" role="button" tabindex="0">
                                 <svg viewBox="0 0 1024 1024" class="close-icon">
                                     <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
@@ -87,7 +65,7 @@
                             <a href="index.html" class="burger-menu">Home</a>
                             <a href="about.html" class="burger-menu">About</a>
                             <a href="what-we-do.html" class="burger-menu">Work</a>
-                            <a href="mailto:hello@jockamobarnes.com?subject=" class="burger-menu">Contact</a>
+                            <a href="mailto:hello@jockamobarnes.com" class="burger-menu">Contact</a>
                         </nav>
                     </div>
                     
@@ -112,23 +90,23 @@
         
         <!-- Main Content -->
         <main>
-            <!-- Hero Section with Equal Width Headers -->
+            <!-- Hero Section -->
             <section class="max-width">
-                <!-- Animated headings with identical styling -->
+                <!-- Animated headings with responsive classes -->
                 <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 0s; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="header-line">
-                        We CREATE <span class="header-line-accent">UNEXPECTED</span>
+                    <h1 class="headline what-we-do-heading-1">
+                        We create <span style="color: var(--color-primary-2);">unexpected</span>
                     </h1>
                 </div>
                 
                 <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 200ms; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="header-line">
-                        AND <span class="header-line-accent">UNIGNORABLE</span> BRAND
+                    <h1 class="headline what-we-do-heading-2">
+                        and <span style="color: var(--color-primary-2);">unignorable</span> brand
                     </h1>
                 </div>
                 
                 <div class="animate__animated animate__fadeInUp" style="animation-duration: 1000ms; animation-delay: 400ms; animation-direction: normal; animation-timing-function: ease; animation-iteration-count: 1;">
-                    <h1 class="header-line">IDEAS THAT DRIVE CULTURE</h1>
+                    <h1 class="headline what-we-do-heading-3">ideas that drive culture.</h1>
                 </div>
                 
                 <p class="content" style="width: 100%; max-width: 585px; padding-top: var(--space-1-5);">
@@ -142,10 +120,10 @@
                 <img alt="Jockamo Barnes emblem" src="public/image/img-creme-emblem-xl-left-1400w.png" style="position: absolute; top: 0; left: -25%; height: 750px; z-index: 0;">
                 
                 <!-- Services Container -->
-                <div style="gap: var(--space-1-5); display: flex; align-self: flex-end; flex-direction: column; position: relative; z-index: 1;">
+                <div style="gap: var(--space-1-5); display: flex; align-self: flex-end; flex-direction: column; position: relative; z-index: 1; left: 50%;">
                     <!-- Strategy Section -->
                     <div style="display: flex; padding-left: var(--space-1-5); padding-right: var(--space-1-5); flex-direction: column;">
-                        <span class="headline services-heading">STRATEGY &amp; RESEARCH</span>
+                        <span class="headline services-heading">Strategy &amp; Research</span>
                         <ul class="list">
                             <li class="list-item">Brand Strategy &amp; Architecture</li>
                             <li class="list-item">⁠Go-to-Market &amp; Campaign Planning</li>
@@ -158,7 +136,7 @@
                     
                     <!-- Creative Section -->
                     <div style="display: flex; padding-left: var(--space-1-5); padding-right: var(--space-1-5); flex-direction: column;">
-                        <span class="headline services-heading">CREATIVE &amp; DESIGN</span>
+                        <span class="headline services-heading">Creative &amp; Design</span>
                         <ul class="list">
                             <li class="list-item">360° Campaign Development</li>
                             <li class="list-item">⁠Brand Identity Design &amp; Evolution</li>
@@ -171,7 +149,7 @@
                     
                     <!-- Production Section -->
                     <div style="display: flex; padding-left: var(--space-1-5); padding-right: var(--space-1-5); flex-direction: column;">
-                        <span class="headline services-heading">PRODUCTION &amp; ACTIVATION</span>
+                        <span class="headline services-heading">Production &amp; Activation</span>
                         <ul class="list">
                             <li class="list-item">⁠Film, Social, and Static Production</li>
                             <li class="list-item">⁠Print &amp; Out-of-Home Production</li>
@@ -191,4 +169,67 @@
                 <img alt="Jockamo Barnes" src="public/image/img-creme-emblem-250px-200h.png" class="footer-logo">
                 
                 <div class="footer-hellos">
-                    <h5 class="small-title">We're fans of bold brands and people.<br>If that sounds like you, give us
+                    <h5 class="small-title">We're fans of bold brands and people.<br>If that sounds like you, give us a shout.</h5>
+                    <a href="mailto:hello@jockamobarnes.com" class="under-link small-text">hello@jockamobarnes.com</a>
+                </div>
+                
+                <div class="footer-homes">
+                    <h5 class="small-title">Proudly made in the Middle East</h5>
+                    <span class="small-text">
+                        Abu Dhabi, UAE<br>
+                        Beirut, Lebanon
+                    </span>
+                </div>
+                
+                <div class="footer-socials">
+                    <h5 class="small-title">Socials</h5>
+                    <div class="footer-links">
+                        <a href="https://instagram.com/wearejockamobarnes" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+                            <img alt="Instagram" src="public/social/ig-icon-creme-200h.png" class="social-btn">
+                        </a>
+                        <a href="https://www.linkedin.com/company/jockamobarnes" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                            <img alt="LinkedIn" src="public/social/linkedin-icon-creme-200h.png" class="social-btn">
+                        </a>
+                        <a href="https://open.spotify.com/playlist/07XtPIfWY4BSArNt22tiqb?si=092f0ecd083c4caf" target="_blank" rel="noreferrer noopener" aria-label="Spotify">
+                            <img alt="Spotify" src="public/social/spotify-icon-creme-200h.png" class="social-btn">
+                        </a>
+                        <a href="https://jockamobarnes.substack.com/" target="_blank" rel="noreferrer noopener" aria-label="Substack">
+                            <img alt="Substack" src="public/social/substack-icon-creme-200w.png" class="social-btn">
+                        </a>
+                    </div>
+                </div>
+                
+                <span class="footer-copyright">&copy2024 Jockamo Barnes Inc.</span>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerButton = document.querySelector('.burger-button');
+            const closeButton = document.querySelector('.close-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            burgerButton.addEventListener('click', function() {
+                mobileMenu.classList.add('teleport-show');
+            });
+            
+            closeButton.addEventListener('click', function() {
+                mobileMenu.classList.remove('teleport-show');
+            });
+        });
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','G-Z94LXD0W59');
+    </script>
+    
+</body>
+</html>
